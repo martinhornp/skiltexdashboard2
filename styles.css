@@ -682,3 +682,13 @@ body {
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .right-col {
+    display: flex;
+  }
+
+  .right-copy {
+    width: 100%;
+  }
+}
