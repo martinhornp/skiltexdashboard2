@@ -1,0 +1,269 @@
+﻿<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Preview</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="cs-page">
+    <section class="dashboard-grid">
+      <section class="left-col">
+        <article class="orders-card card">
+          <div class="orders-main">
+            <span class="orders-number">1043</span>
+            <span class="orders-trend"><i class="fa fa-arrow-up"></i><span>13%</span></span>
+          </div>
+          <div class="orders-title">Orders this week</div>
+          <div class="orders-record">Record: 1134</div>
+        </article>
+      </section>
+
+      <section class="calls-col cs-mid-col">
+        <div class="top-cards">
+          <article class="card kpi-card">
+            <div class="kpi-title">Answered calls</div>
+            <div class="kpi-big kpi-green">
+              <span>417</span>
+              <span class="kpi-arrow"><i class="fa fa-arrow-up"></i></span>
+            </div>
+            <div class="kpi-rows">
+              <div class="kpi-row">
+                <span class="kpi-label">Talk time</span>
+                <span class="kpi-value">17:14:36</span>
+              </div>
+              <div class="kpi-row">
+                <span class="kpi-label">Avg. talk time</span>
+                <span class="kpi-value">00:02:28</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card kpi-card">
+            <div class="kpi-title">Answer rate</div>
+            <div class="kpi-big kpi-green">
+              <span>98%</span>
+              <span class="kpi-arrow"><i class="fa fa-arrow-up"></i></span>
+            </div>
+            <div class="kpi-rows">
+              <div class="kpi-row">
+                <span class="kpi-label">Missed calls</span>
+                <span class="kpi-value">7 <i class="fa fa-arrow-up delta-up"></i></span>
+              </div>
+              <div class="kpi-row">
+                <span class="kpi-label">Avg. wait</span>
+                <span class="kpi-value">00:00:08 <i class="fa fa-arrow-down delta-good"></i></span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="flags-grid" aria-label="Country call split">
+          <div class="flag-pill"><span class="flag-cell flag-dk"></span><span class="pill-count">178</span></div>
+          <div class="flag-pill"><span class="flag-cell flag-se"></span><span class="pill-count">31</span></div>
+          <div class="flag-pill"><span class="flag-cell flag-de"></span><span class="pill-count">10</span></div>
+          <div class="flag-pill"><span class="flag-cell flag-no"></span><span class="pill-count">17</span></div>
+        </div>
+
+        <section class="agents" aria-label="Agent metrics">
+          <article class="agent-card">
+            <div class="agent-left">
+              <div class="agent-name-vert">ELLA</div>
+              <div class="avatar-wrap">
+                <img class="avatar-img" src="./assets/ella.jpg" alt="Ella">
+              </div>
+            </div>
+            <div class="agent-mid">
+              <div class="mid-content">
+                <div class="mid-row in"><i class="fa fa-phone"></i><span class="mid-num">82</span></div>
+                <div class="mid-row out"><i class="fa fa-phone"></i><span class="mid-num">42</span></div>
+              </div>
+            </div>
+            <div class="agent-right">
+              <div class="total up">124 <i class="fa fa-arrow-up"></i></div>
+              <div class="meta">04:12:48</div>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-left">
+              <div class="agent-name-vert">SARAH</div>
+              <div class="avatar-wrap">
+                <img class="avatar-img" src="./assets/sarah.jpg" alt="Sarah">
+              </div>
+            </div>
+            <div class="agent-mid">
+              <div class="mid-content">
+                <div class="mid-row in"><i class="fa fa-phone"></i><span class="mid-num">59</span></div>
+                <div class="mid-row out"><i class="fa fa-phone"></i><span class="mid-num">30</span></div>
+              </div>
+            </div>
+            <div class="agent-right">
+              <div class="total up">89 <i class="fa fa-arrow-up"></i></div>
+              <div class="meta">03:34:30</div>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-left">
+              <div class="agent-name-vert">INGRID</div>
+              <div class="avatar-wrap">
+                <img class="avatar-img" src="./assets/ingrid.jpg" alt="Ingrid">
+              </div>
+            </div>
+            <div class="agent-mid">
+              <div class="mid-content">
+                <div class="mid-row in"><i class="fa fa-phone"></i><span class="mid-num">62</span></div>
+                <div class="mid-row out"><i class="fa fa-phone"></i><span class="mid-num">25</span></div>
+              </div>
+            </div>
+            <div class="agent-right">
+              <div class="total up">87 <i class="fa fa-arrow-up"></i></div>
+              <div class="meta">04:18:41</div>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-left">
+              <div class="agent-name-vert">MARCUS</div>
+              <div class="avatar-wrap">
+                <img class="avatar-img" src="./assets/marcus.jpg" alt="Marcus">
+              </div>
+            </div>
+            <div class="agent-mid">
+              <div class="mid-content">
+                <div class="mid-row in"><i class="fa fa-phone"></i><span class="mid-num">11</span></div>
+                <div class="mid-row out"><i class="fa fa-phone"></i><span class="mid-num">38</span></div>
+              </div>
+            </div>
+            <div class="agent-right">
+              <div class="total down">49 <i class="fa fa-arrow-down"></i></div>
+              <div class="meta">01:58:52</div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="right-col" aria-label="Right-side KPI copy">
+        <div class="right-copy">
+          <div class="top-cards">
+            <article class="card kpi-card">
+              <div class="kpi-title">Answered E-mails</div>
+              <div class="kpi-big kpi-green">
+                <span>417</span>
+                <span class="kpi-arrow"><i class="fa fa-arrow-up"></i></span>
+              </div>
+              <div class="kpi-rows">
+                <div class="kpi-row">
+                  <span class="kpi-label">Avg. reponed time</span>
+                  <span class="kpi-value">00:02:28</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card kpi-card">
+              <div class="kpi-title">Answer rate E-mails</div>
+              <div class="kpi-big kpi-green">
+                <span>98%</span>
+                <span class="kpi-arrow"><i class="fa fa-arrow-up"></i></span>
+              </div>
+              <div class="kpi-rows">
+                <div class="kpi-row">
+                  <span class="kpi-label">Missed mails</span>
+                  <span class="kpi-value">7 <i class="fa fa-arrow-up delta-up"></i></span>
+                </div>
+                <div class="kpi-row">
+                  <span class="kpi-label">Avg. wait</span>
+                  <span class="kpi-value">00:00:08 <i class="fa fa-arrow-down delta-good"></i></span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="flags-grid" aria-label="Country call split copy">
+            <div class="flag-pill"><span class="flag-cell flag-dk"></span><span class="pill-count">178</span></div>
+            <div class="flag-pill"><span class="flag-cell flag-se"></span><span class="pill-count">31</span></div>
+            <div class="flag-pill"><span class="flag-cell flag-de"></span><span class="pill-count">10</span></div>
+            <div class="flag-pill"><span class="flag-cell flag-no"></span><span class="pill-count">17</span></div>
+          </div>
+
+          <section class="agents" aria-label="Agent metrics copy">
+            <article class="agent-card">
+              <div class="agent-left">
+                <div class="agent-name-vert">ELLA</div>
+                <div class="avatar-wrap">
+                  <img class="avatar-img" src="./assets/ella.jpg" alt="Ella">
+                </div>
+              </div>
+              <div class="agent-mid">
+                <div class="mid-content">
+                  <div class="mid-row in"><i class="fa fa-mail"></i><span class="mid-num">82</span></div>
+                </div>
+              </div>
+              <div class="agent-right">
+                <div class="total up">124 <i class="fa fa-arrow-up"></i></div>
+                <div class="meta">04:12:48</div>
+              </div>
+            </article>
+
+            <article class="agent-card">
+              <div class="agent-left">
+                <div class="agent-name-vert">SARAH</div>
+                <div class="avatar-wrap">
+                  <img class="avatar-img" src="./assets/sarah.jpg" alt="Sarah">
+                </div>
+              </div>
+              <div class="agent-mid">
+                <div class="mid-content">
+                  <div class="mid-row in"><i class="fa fa-mail"></i><span class="mid-num">59</span></div>
+                </div>
+              </div>
+              <div class="agent-right">
+                <div class="total up">89 <i class="fa fa-arrow-up"></i></div>
+                <div class="meta">03:34:30</div>
+              </div>
+            </article>
+
+            <article class="agent-card">
+              <div class="agent-left">
+                <div class="agent-name-vert">INGRID</div>
+                <div class="avatar-wrap">
+                  <img class="avatar-img" src="./assets/ingrid.jpg" alt="Ingrid">
+                </div>
+              </div>
+              <div class="agent-mid">
+                <div class="mid-content">
+                  <div class="mid-row in"><i class="fa fa-mail"></i><span class="mid-num">62</span></div>
+                </div>
+              </div>
+              <div class="agent-right">
+                <div class="total up">87 <i class="fa fa-arrow-up"></i></div>
+                <div class="meta">04:18:41</div>
+              </div>
+            </article>
+
+            <article class="agent-card">
+              <div class="agent-left">
+                <div class="agent-name-vert">MARCUS</div>
+                <div class="avatar-wrap">
+                  <img class="avatar-img" src="./assets/marcus.jpg" alt="Marcus">
+                </div>
+              </div>
+              <div class="agent-mid">
+                <div class="mid-content">
+                  <div class="mid-row in"><i class="fa fa-mail"></i><span class="mid-num">11</span></div>
+                </div>
+              </div>
+              <div class="agent-right">
+                <div class="total down">49 <i class="fa fa-arrow-down"></i></div>
+                <div class="meta">01:58:52</div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
