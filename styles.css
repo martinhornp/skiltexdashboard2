@@ -487,6 +487,10 @@ body {
   gap: 12px;
 }
 
+.right-copy .meta {
+  display: none;
+}
+
 @media (max-width: 1600px) {
   .dashboard-grid {
     grid-template-columns: minmax(300px, 31%) minmax(500px, 42%) 1fr;
