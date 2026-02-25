@@ -691,4 +691,20 @@ body {
   .right-copy {
     width: 100%;
   }
+
+  /* Fallback for mobile browsers where CSS mask icons may not render reliably. */
+  .mid-row .fa-phone::before,
+  .mid-row .fa-mail::before {
+    content: "✆";
+    background: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+    width: auto;
+    height: auto;
+    line-height: 1;
+  }
+
+  .mid-row .fa-mail::before {
+    content: "✉";
+  }
 }
