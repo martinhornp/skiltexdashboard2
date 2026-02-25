@@ -342,6 +342,10 @@ body {
   gap: 8px;
 }
 
+.calls-col > .agents {
+  margin-top: 22px;
+}
+
 .agent-card {
   display: grid;
   grid-template-columns: 190px 1fr 145px;
@@ -489,6 +493,25 @@ body {
 
 .right-copy .meta {
   display: none;
+}
+
+.right-copy .flag-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.right-copy .flag-stat .flag-pill {
+  width: 100%;
+}
+
+.right-copy .flag-time {
+  color: #b8c7d6;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
 }
 
 @media (max-width: 1600px) {
