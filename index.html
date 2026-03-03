@@ -18,6 +18,61 @@
           <div class="orders-title">Orders this week</div>
           <div class="orders-record">Record: 1134</div>
         </article>
+
+        <section class="card panel-card handling-panel" aria-label="Handling section">
+          <div class="handling-grid"
+            data-auto-current="72"
+            data-auto-previous="67"
+            data-manual-current="18"
+            data-manual-previous="21">
+            <article class="handling-card" data-metric="automated" data-increase-good="true">
+              <div class="handling-label">Automated orders</div>
+              <div class="handling-main">
+                <span class="handling-value"></span>
+                <span class="handling-trend"><i class="fa fa-arrow-up"></i></span>
+              </div>
+            </article>
+
+            <article class="handling-card" data-metric="manual-created" data-increase-good="false">
+              <div class="handling-label">Manually created orders</div>
+              <div class="handling-main">
+                <span class="handling-value"></span>
+                <span class="handling-trend"><i class="fa fa-arrow-up"></i></span>
+              </div>
+            </article>
+
+            <article class="handling-card" data-metric="manual-check" data-increase-good="false">
+              <div class="handling-label">Manual check</div>
+              <div class="handling-main">
+                <span class="handling-value"></span>
+                <span class="handling-trend"><i class="fa fa-arrow-up"></i></span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card panel-card trustpilot-panel" aria-label="Trustpilot section">
+          <h2 class="panel-title trustpilot-title">Trust pilot <span class="trustpilot-star" aria-hidden="true">★</span></h2>
+          <div class="trustpilot-grid"
+            data-current-score="4.86"
+            data-score-30d="4.82"
+            data-reply-time-days="2">
+            <article class="trustpilot-card" data-trustpilot-metric="current-score">
+              <div class="trustpilot-label">Current score</div>
+              <div class="trustpilot-value"></div>
+            </article>
+
+            <article class="trustpilot-card" data-trustpilot-metric="score-30-days">
+              <div class="trustpilot-label">Score last 30 days</div>
+              <div class="trustpilot-value"></div>
+            </article>
+
+            <article class="trustpilot-card" data-trustpilot-metric="reply-time">
+              <div class="trustpilot-label">Average reply time</div>
+              <div class="trustpilot-value"></div>
+            </article>
+          </div>
+        </section>
       </section>
 
       <section class="calls-col cs-mid-col">
@@ -277,5 +332,73 @@
       </section>
     </section>
   </main>
+  <script>
+    (() => {
+      const handlingGrid = document.querySelector(".handling-grid");
+      if (handlingGrid) {
+        const autoCurrent = Number(handlingGrid.dataset.autoCurrent || 0);
+        const autoPrevious = Number(handlingGrid.dataset.autoPrevious || 0);
+        const manualCurrent = Number(handlingGrid.dataset.manualCurrent || 0);
+        const manualPrevious = Number(handlingGrid.dataset.manualPrevious || 0);
+        const metrics = {
+          automated: { current: autoCurrent, previous: autoPrevious },
+          "manual-created": { current: manualCurrent, previous: manualPrevious },
+          "manual-check": {
+            current: Math.max(0, 100 - autoCurrent - manualCurrent),
+            previous: Math.max(0, 100 - autoPrevious - manualPrevious)
+          }
+        };
+
+        handlingGrid.querySelectorAll(".handling-card").forEach((card) => {
+          const metricName = card.dataset.metric;
+          const metric = metrics[metricName];
+          if (!metric) return;
+
+          const increaseGood = card.dataset.increaseGood === "true";
+          const isUp = metric.current >= metric.previous;
+          const isGreen = (isUp && increaseGood) || (!isUp && !increaseGood);
+          const valueEl = card.querySelector(".handling-value");
+          const trendEl = card.querySelector(".handling-trend");
+          const iconEl = trendEl.querySelector(".fa");
+
+          valueEl.textContent = `${metric.current.toFixed(1)}%`;
+          trendEl.classList.toggle("trend-green", isGreen);
+          trendEl.classList.toggle("trend-red", !isGreen);
+          iconEl.classList.remove("fa-arrow-up", "fa-arrow-down");
+          iconEl.classList.add(isUp ? "fa-arrow-up" : "fa-arrow-down");
+        });
+      }
+
+      const trustpilotGrid = document.querySelector(".trustpilot-grid");
+      if (trustpilotGrid) {
+        const currentScore = Number(trustpilotGrid.dataset.currentScore || 0);
+        const score30Days = Number(trustpilotGrid.dataset.score30d || 0);
+        const replyTimeDays = Number(trustpilotGrid.dataset.replyTimeDays || 0);
+
+        trustpilotGrid.querySelectorAll(".trustpilot-card").forEach((card) => {
+          const metric = card.dataset.trustpilotMetric;
+          const valueEl = card.querySelector(".trustpilot-value");
+          valueEl.classList.remove("tp-blue", "tp-green", "tp-red");
+
+          if (metric === "current-score") {
+            valueEl.textContent = currentScore.toFixed(2);
+            valueEl.classList.add("tp-blue");
+            return;
+          }
+
+          if (metric === "score-30-days") {
+            valueEl.textContent = score30Days.toFixed(2);
+            valueEl.classList.add(score30Days >= 4.8 ? "tp-green" : "tp-red");
+            return;
+          }
+
+          if (metric === "reply-time") {
+            valueEl.textContent = `${replyTimeDays} day${replyTimeDays === 1 ? "" : "s"}`;
+            valueEl.classList.add(replyTimeDays <= 2 ? "tp-green" : "tp-red");
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
