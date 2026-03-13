@@ -91,7 +91,13 @@ body {
 .left-col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
+}
+
+.left-col .card,
+.handling-card {
+  background: #efefef;
+  box-shadow: none;
 }
 
 .cs-mid-col {
@@ -118,26 +124,27 @@ body {
 }
 
 .orders-card {
-  min-height: 214px;
+  min-height: 258px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  padding: 18px 16px;
+  padding: 28px 22px 30px;
+  border-radius: 18px;
 }
 
 .orders-main {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 22px;
 }
 
 .orders-number {
   color: var(--text-main);
-  font-size: 82px;
+  font-size: 106px;
   font-weight: 800;
   letter-spacing: 0.5px;
 }
@@ -147,7 +154,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 44px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 1;
 }
@@ -161,25 +168,21 @@ body {
 }
 
 .orders-title {
-  margin: 4px 0 2px;
-  color: #65717d;
-  font-size: 40px;
+  margin: 0 0 10px;
+  color: #716b67;
+  font-size: 34px;
   font-weight: 700;
   line-height: 1.1;
 }
 
 .orders-record {
-  color: var(--text-muted);
-  font-size: 26px;
+  color: #8b959f;
+  font-size: 18px;
   line-height: 1;
 }
 
 .panel-card {
   padding: 14px 16px 16px;
-}
-
-.handling-panel {
-  padding-top: 10px;
 }
 
 .panel-title {
@@ -192,52 +195,60 @@ body {
   text-transform: uppercase;
 }
 
-.handling-grid,
-.trustpilot-grid {
+.handling-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  gap: 16px;
 }
 
-.handling-card,
-.trustpilot-card {
-  background: #f5f7f9;
-  border-radius: 10px;
-  padding: 10px 12px;
-  min-height: 116px;
+.handling-panel {
+  padding: 0;
+}
+
+.handling-card {
+  border-radius: 16px;
+  padding: 20px 14px 22px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
-.handling-label,
-.trustpilot-label {
-  color: #7b8a97;
-  font-size: 12px;
+.handling-label {
+  color: #716b67;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0;
   line-height: 1.2;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .handling-main {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.handling-main-center {
+  justify-content: center;
 }
 
 .handling-value {
   color: var(--text-main);
-  font-size: 30px;
+  font-size: 60px;
   font-weight: 800;
-  line-height: 1;
+  line-height: 0.9;
 }
 
 .handling-trend {
   display: inline-flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 40px;
   line-height: 1;
 }
 
@@ -253,36 +264,82 @@ body {
   color: var(--down);
 }
 
-.trustpilot-value {
-  color: var(--text-main);
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1;
+.trustpilot-panel {
+  padding: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: none;
 }
 
-.trustpilot-title {
-  display: inline-flex;
+.trustpilot-banner {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  text-transform: none;
+  gap: 10px;
+  padding: 14px 22px;
+  background: linear-gradient(90deg, #121315, #191b1f);
+  color: #fff;
 }
 
 .trustpilot-star {
   color: #00b67a;
-  font-size: 1.05em;
+  font-size: 30px;
   line-height: 1;
 }
 
-.tp-blue {
-  color: var(--tp-blue);
+.trustpilot-wordmark {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.tp-green {
-  color: var(--up);
+.trustpilot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
 }
 
-.tp-red {
-  color: var(--down);
+.trustpilot-card {
+  min-height: 156px;
+  padding: 60px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border-radius: 0;
+}
+
+.trustpilot-card + .trustpilot-card {
+  border-left: 1px solid #d4d8dc;
+}
+
+.trustpilot-label {
+  color: #716b67;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: none;
+}
+
+.trustpilot-dash {
+  display: block;
+  width: 22px;
+  height: 8px;
+  border-radius: 1px;
+}
+
+.trustpilot-dash.tp-blue {
+  background: var(--text-main);
+}
+
+.trustpilot-dash.tp-green {
+  background: var(--up);
+}
+
+.trustpilot-dash.tp-red {
+  background: #ff1b1b;
 }
 
 .calls-col {
@@ -320,7 +377,14 @@ body {
   line-height: 1;
   font-size: 60px;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   margin-bottom: 24px;
+}
+
+.right-copy .kpi-big > span:first-child {
+  display: inline-block;
+  min-width: 3ch;
+  text-align: center;
 }
 
 .kpi-green {
@@ -614,22 +678,36 @@ body {
 }
 
 .right-copy .flag-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 6px;
+  display: block;
 }
 
 .right-copy .flag-stat .flag-pill {
   width: 100%;
 }
 
-.right-copy .flag-time {
-  color: #b8c7d6;
-  font-size: 16px;
-  font-weight: 700;
+.right-copy .flag-pill-double {
+  height: 72px;
+}
+
+.right-copy .pill-count-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.right-copy .pill-count-stack .pill-count {
+  flex: none;
+  font-size: 20px;
   line-height: 1;
-  text-align: center;
+}
+
+.right-copy .pill-count-stack .pill-count-secondary {
+  font-size: 16px;
+  color: #d5e1ec;
 }
 
 @media (max-width: 1600px) {
@@ -642,37 +720,42 @@ body {
   }
 
   .orders-number {
-    font-size: 72px;
+    font-size: 92px;
   }
 
   .orders-trend {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .orders-title {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .orders-record {
-    font-size: 22px;
+    font-size: 17px;
   }
 
-  .handling-card,
-  .trustpilot-card {
-    min-height: 104px;
-    padding: 10px;
+  .handling-card {
+    min-height: 136px;
+    padding: 18px 12px 20px;
   }
 
   .handling-value {
-    font-size: 26px;
+    font-size: 52px;
   }
 
   .handling-trend {
-    font-size: 20px;
+    font-size: 34px;
   }
 
-  .trustpilot-value {
-    font-size: 30px;
+  .handling-label,
+  .trustpilot-label {
+    font-size: 13px;
+  }
+
+  .trustpilot-card {
+    min-height: 144px;
+    padding-top: 54px;
   }
 
   .kpi-title {
@@ -743,6 +826,48 @@ body {
 @media (max-width: 1420px) {
   .kpi-title {
     font-size: 14px;
+  }
+
+  .orders-card {
+    min-height: 228px;
+  }
+
+  .orders-number {
+    font-size: 80px;
+  }
+
+  .orders-trend {
+    font-size: 36px;
+  }
+
+  .orders-title {
+    font-size: 26px;
+  }
+
+  .handling-grid {
+    gap: 12px;
+  }
+
+  .handling-card {
+    min-height: 122px;
+  }
+
+  .handling-value {
+    font-size: 44px;
+  }
+
+  .handling-trend {
+    font-size: 30px;
+  }
+
+  .handling-label,
+  .trustpilot-label {
+    font-size: 12px;
+  }
+
+  .trustpilot-card {
+    min-height: 132px;
+    padding-top: 46px;
   }
 
   .kpi-big {
